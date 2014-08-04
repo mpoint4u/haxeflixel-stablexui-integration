@@ -50,15 +50,16 @@ class Main extends ru.stablex.ui.widgets.Widget{
 	{
 		super();
 
-    var demo:TileMapDemo = new TileMapDemo();
-
+    //var demo:TileMapDemo = new TileMapDemo();
+	var demo:ScaleModeDemo = new ScaleModeDemo();
+	
     demo.addEventListener(Event.ADDED_TO_STAGE, function(e:Event){
       //setupUi_HelloWorld();
       setupUi_ComplexGUI();
     });
      
-    addChild(demo);
+    //addChild(demo);
 
-		flash.Lib.current.addChild(demo);
+		Lib.current.addChild(demo);
 	}
 }
