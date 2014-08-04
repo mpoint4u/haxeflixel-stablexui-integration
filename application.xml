@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<!-- NMML reference: https://gist.github.com/1763850 -->
+	
+	<!-- metadata, make sure 'package' is at least 3 segments (ie. com.mycompany.myproject) -->
+	<meta title="Haxeflixel-stablexui-integration" package="Haxeflixel.stablexui.integration" version="1.0.0" company="pm" />
+	
+	<!-- output -->
+	<app main="Main" file="TileMapDemo" path="bin" />
+	
+	<window background="#000000" />
+	
+	<window width="800" height="600" fps="30" orientation="portrait" resizable="true" if="flash" />	
+	
+	<window width="800" height="600" orientation="landscape" hardware="true" unless="flash" />
+	
+	
+	
+	<!-- classpath, haxe libs -->
+	<source path="source" />
+	<haxelib name="openfl" />
+	<haxelib name="actuate" />
+	<haxelib name="flixel" />
+	<haxelib name="stablexui" />
+	
+	
+	<!-- assets -->
+	<assets path="ui/android" include="*" exclude="defaults.xml|skins.xml"/>
+
+	<assets path="assets" if="android" >
+		<sound path="data/beep.wav" id="Beep" />
+	</assets>
+	
+	<assets path="assets" if="desktop" >
+		<sound path="data/beep.wav" id="Beep" />
+	</assets>
+	
+	<assets path="assets" if="flash" >
+		<sound path="data/beep.mp3" id="Beep" />
+	</assets>
+	
+	<assets path="assets" exclude="*.wav" if="flash" />
+	<assets path="assets" unless="flash" />
+	
+	<icon name="assets/HaxeFlixel.svg" />
+	
+	
+	
+	
+	<!-- standard OpenFL assets -->
+	<icon path="assets/openfl.svg" />	
+	<assets path="assets/img" rename="img" />
+	
+	<!-- optimize output
+	<haxeflag name="-dce full" /> -->
+	
+</project>
